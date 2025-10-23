@@ -39,7 +39,7 @@ class QuestionController extends Controller
             'user_id' => Auth::id(),
         ]);
 
-        return redirect()->route('question.show', $question)->with('success', 'Pregunta creada exitosamente.');
+        return redirect()->route('home')->with('success', 'Pregunta creada exitosamente.');
     }
 
     public function edit(Question $question){

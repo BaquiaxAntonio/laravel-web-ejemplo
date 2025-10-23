@@ -19,9 +19,9 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/questions/{question}/edit',[QuestionController::class,'edit'])->name('questions.edit');
     Route::put('/questions/{question}',[QuestionController::class,'update'])->name('questions.update');
 });
-Route::view('dashboard', 'dashboard')
-    ->middleware(['auth', 'verified'])
-    ->name('dashboard');
+// Route::view('dashboard', 'dashboard')
+//     ->middleware(['auth', 'verified'])
+//     ->name('dashboard');
 
 Route::middleware(['auth'])->group(function () {
     Route::redirect('settings', 'settings/profile');
