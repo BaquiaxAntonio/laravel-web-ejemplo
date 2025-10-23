@@ -1,8 +1,11 @@
 <x-forum.layouts.app>
 
 @if(session('success'))
-    <div class="bg-green-600 text-white px-4 py-2 rounded mb-4">
-        {{ session('success') }}
+    <div class="bg-green-600 text-white px-4 py-2 rounded mb-4 flex justify-between items-center">
+        <span>{{ session('success') }}</span>
+        <a href="{{ route('home') }}" class="bg-white text-green-600 px-3 py-1 rounded text-sm font-semibold hover:bg-gray-100">
+            ← Regresar al foro
+        </a>
     </div>
 @endif
 
