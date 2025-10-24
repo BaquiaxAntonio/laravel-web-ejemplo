@@ -23,5 +23,3 @@ services:
         value: database
       - key: CACHE_STORE
         value: database
-      - key: DB_SSLMODE
-        value: require  
