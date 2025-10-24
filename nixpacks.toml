@@ -3,8 +3,10 @@ nixPkgs = ["php82", "php82Extensions.sqlite3"]
 
 [phases.build]
 cmds = [
-  "composer install --no-dev --optimize-autoloader"
+  "composer install --no-dev --optimize-autoloader",
+  "mkdir -p storage/framework/{sessions,views,cache} storage/logs bootstrap/cache",
+  "chmod -R 775 storage bootstrap/cache"
 ]
 
 [start]
-cmd = "touch /app/database/database.sqlite && chmod 775 /app/database/database.sqlite && php artisan migrate --force && php artisan serve --host=0.0.0.0 --port=${PORT:-8080}"
+cmd = "php artisan migrate --force && php artisan serve --host=0.0.0.0 --port=${PORT:-8080}"
