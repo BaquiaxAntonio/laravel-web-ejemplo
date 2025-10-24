@@ -7,4 +7,4 @@ cmds = [
 ]
 
 [start]
-cmd = "touch /app/database/database.sqlite && chmod -R 775 /app/database && php artisan migrate --force && php artisan serve --host=0.0.0.0 --port=${PORT:-8080}"
+cmd = "touch /app/database/database.sqlite && chmod 775 /app/database/database.sqlite && php artisan migrate --force && php artisan serve --host=0.0.0.0 --port=${PORT:-8080}"
