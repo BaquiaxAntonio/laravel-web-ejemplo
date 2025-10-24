@@ -4,6 +4,10 @@ services:
     env: docker
     dockerfilePath: ./Dockerfile
     healthCheckPath: /
+    disk:
+      name: laravel-data
+      mountPath: /var/data
+      sizeGB: 1
     envVars:
       - key: APP_KEY
         sync: false
@@ -13,6 +17,8 @@ services:
         value: false
       - key: DB_CONNECTION
         value: sqlite
+      - key: DB_DATABASE
+        value: /var/data/database.sqlite
       - key: SESSION_DRIVER
         value: database
       - key: CACHE_STORE
